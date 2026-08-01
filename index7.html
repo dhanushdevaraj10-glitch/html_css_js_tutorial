@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input id="input">
+    <button onclick="add()">Add</button>
+    <ol id="todoList">
+        <li>
+            Hello Everyone
+              <button onclick="deleteEvent(event)">
+                Delete
+              </button>
+        </li>
+    </ol>
+
+    <script>
+        var ol=document.getElementById("todoList");
+        var input=document.getElementById("input");
+
+        function add()
+        {
+            var list=document.createElement("li");        
+            list.innerHTML=input.value + " <button onclick='deleteEvent(event)'>Delete</button>";
+            ol.append(list);
+        }
+
+        function deleteEvent(event)
+        {
+            event.target.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
